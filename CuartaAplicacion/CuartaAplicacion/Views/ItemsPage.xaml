@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CuartaAplicacion.Views.ItemsPage"
+              Title="{Binding Title}"
+             x:Name="BrowseItemsPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="txtEstadoConexion" Text="Estado: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <Label x:Name="txtPosicionGps" Text="Posicion: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <Label x:Name="txtTemperatura" Text="Temp: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
