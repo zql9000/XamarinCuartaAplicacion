@@ -14,8 +14,10 @@ namespace CuartaAplicacion
 			InitializeComponent();
 
 
-			MainPage = new MainPage();
-		}
+            //MainPage = new MainPage();
+            MainPage = new PaginaUsaControlPersonalizado();
+
+        }
 
 		protected override void OnStart ()
 		{

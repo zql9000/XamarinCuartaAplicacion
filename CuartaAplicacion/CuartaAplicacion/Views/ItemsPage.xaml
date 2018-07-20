@@ -1,14 +1,31 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:renderer="clr-namespace:CuartaAplicacion.Renderers"
              x:Class="CuartaAplicacion.Views.ItemsPage"
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
+    <ContentPage.Resources>
+        <DataTemplate x:Key="jugadorTemplate">
+            <ViewCell>
+                <Grid>
+                    <Image Source="{Binding Foto}" Grid.Column="0" />
+                    <Image Source="{Binding Bandera}" Grid.Column="1" />
+                    <StackLayout Grid.Column="2" VerticalOptions="Center">
+                        <Label Text="{Binding Apellido}" HorizontalTextAlignment="Center" />
+                        <Label Text="{Binding Pais}" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                </Grid>
+            </ViewCell>
+        </DataTemplate>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout>
             <Label x:Name="txtEstadoConexion" Text="Estado: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
             <Label x:Name="txtPosicionGps" Text="Posicion: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
             <Label x:Name="txtTemperatura" Text="Temp: " HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+            <ListView x:Name="lvJugadores" HasUnevenRows="True"
+                ItemTemplate="{StaticResource jugadorTemplate}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
